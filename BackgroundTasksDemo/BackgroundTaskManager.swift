@@ -91,7 +91,10 @@ class BackgroundTaskManager {
         BGTaskScheduler.shared.cancelAllTaskRequests()
     }
 
-    // Método para programar el App Refresh
+    ///** what is the difference between BGProcessingTaskRequest and BGProcessingTaskRequest ** ///
+    /// BGAppRefreshTaskRequest: This is a request to launch an app in the background to execute a short refresh task.
+    /// BGProcessingTaskRequest: This is a request to launch an app in the background and execute a process that takes a longer time to complete.
+    
     func scheduleAppRefresh() {
         let timeDelay = 10.0
         let request = BGAppRefreshTaskRequest(identifier: "com.marcoalonsorota.apprefresh")
