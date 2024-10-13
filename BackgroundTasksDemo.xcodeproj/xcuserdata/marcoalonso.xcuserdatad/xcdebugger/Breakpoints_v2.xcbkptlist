@@ -7,15 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F9FCAB9E-074B-4CFE-8887-25DEA45CBCC4"
+            uuid = "CA7D71F1-A673-4F57-A8D1-5FC005A222F9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BackgroundTasksDemo/SceneDelegate.swift"
+            filePath = "BackgroundTasksDemo/BackgroundTaskManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "scheduleAppRefresh()"
             landmarkType = "7">
          </BreakpointContent>

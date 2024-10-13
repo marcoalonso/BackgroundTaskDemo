@@ -47,31 +47,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
         print("Debug: applicationDidEnterBackground")
-        cancelAllPandingBGTask()
-        scheduleAppRefresh()
+        BackgroundTaskManager.shared.cancelAllPendingBGTasks()
+        BackgroundTaskManager.shared.scheduleAppRefresh()
         print("Background time remaining: \(UIApplication.shared.backgroundTimeRemaining)s")
     }
 
-}
-
-extension SceneDelegate {
-    func cancelAllPandingBGTask() {
-        print("Debug: cancelAllPandingBGTask ")
-        BGTaskScheduler.shared.cancelAllTaskRequests()
-    }
-    
-    func scheduleAppRefresh() {
-        let timeDelay = 10.0
-        
-        do {
-        let request = BGAppRefreshTaskRequest(identifier: "com.marcoalonsorota.apprefresh")
-            request.earliestBeginDate = Date(timeIntervalSinceNow: timeDelay)
-            // e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateLaunchForTaskWithIdentifier:@"com.marcoalonsorota.apprefresh"]
-            
-            try BGTaskScheduler.shared.submit(request)
-            print("Debug: scheduled \(request.identifier)")
-        } catch {
-            print("Debug: Could not schedule app refresh: \(error)")
-        }
-    }
 }
